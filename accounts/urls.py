@@ -12,8 +12,10 @@ from accounts.views import (
     BookUpdateAPIView,
     BookDestroyAPIView
 )
+from accounts.views.token import MyTokenObtainPairView
 
 urlpatterns = [
+    path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path("accounts/user/create/", UserCreateAPIView.as_view(), name="user-create"),
     path(
         "accounts/user/list/",

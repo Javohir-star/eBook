@@ -12,6 +12,7 @@ from .user import (
     UserUpdateAPIView,
     UserDestroyAPIView
 )
+from .token import MyTokenObtainPairView
 
 __all__ = [
     'BookCreateAPIView',
@@ -23,5 +24,6 @@ __all__ = [
     'UserListAPIView',
     'UserRetrieveAPIView',
     'UserUpdateAPIView',
-    'UserDestroyAPIView'
+    'UserDestroyAPIView',
+    'MyTokenObtainPairView',
 ]
