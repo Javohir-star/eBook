@@ -14,8 +14,13 @@ class BookCreateAPIView(CreateAPIView):
     serializer_class = BookSerializer
 
 class BookListAPIView(ListAPIView):
-    queryset = Book.objects.all().order_by('published_date')
+    queryset = Book.objects.all().order_by('id')
     serializer_class = BookSerializer
+
+class UserBookIdAPIView(ListAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    filterset_fields = ['book']
 
 class BookRetrieveAPIView(RetrieveAPIView):
     queryset = Book.objects.all()

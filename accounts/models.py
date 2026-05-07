@@ -2,6 +2,7 @@ from django.db import models
 
 
 class User(models.Model):
+    id = models.AutoField(primary_key=True)
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=128)
     name = models.CharField(max_length=255)
@@ -15,10 +16,11 @@ class User(models.Model):
 
 
 class Book(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=255)
     user = models.ForeignKey(
-        "accounts.User", 
-        on_delete=models.CASCADE, 
+        User,
+        on_delete=models.CASCADE,
         related_name="books"
     )
     published_date = models.DateField()

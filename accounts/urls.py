@@ -3,6 +3,7 @@ from django.urls import path
 from accounts.views import (
     UserCreateAPIView,
     UserListAPIView,
+    UserBookIdAPIView,
     UserRetrieveAPIView,
     UserUpdateAPIView,
     UserDestroyAPIView,
@@ -25,7 +26,8 @@ urlpatterns = [
     path("accounts/user/<int:pk>/", UserRetrieveAPIView.as_view(), name="user-retrieve"),
     path("accounts/user/update/<int:pk>/", UserUpdateAPIView.as_view(), name="user-update"),
     path("accounts/user/delete/<int:pk>/", UserDestroyAPIView.as_view(), name="user-delete"),
-    
+    path("accounts/user/books/<int:book_id>/", UserBookIdAPIView.as_view(), name="user-books"),
+
     path("accounts/book/create/", BookCreateAPIView.as_view(), name="book-create"),
     path(
         "accounts/book/list/",

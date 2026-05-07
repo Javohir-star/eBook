@@ -14,7 +14,7 @@ class UserCreateAPIView(CreateAPIView):
     serializer_class = UserSerializer
 
 class UserListAPIView(ListAPIView):
-    queryset = User.objects.all().order_by('email')
+    queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
 
 class UserRetrieveAPIView(RetrieveAPIView):

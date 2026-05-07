@@ -3,7 +3,8 @@ from .book import (
     BookListAPIView,
     BookRetrieveAPIView,
     BookUpdateAPIView,
-    BookDestroyAPIView
+    BookDestroyAPIView,
+    UserBookIdAPIView,
 )
 from .user import (
     UserCreateAPIView,
@@ -20,6 +21,7 @@ __all__ = [
     'BookRetrieveAPIView',
     'BookUpdateAPIView',
     'BookDestroyAPIView',
+    'UserBookIdAPIView',
     'UserCreateAPIView',
     'UserListAPIView',
     'UserRetrieveAPIView',
